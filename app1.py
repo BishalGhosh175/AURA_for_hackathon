@@ -139,7 +139,19 @@ if st.session_state.model is None:
     **Welcome!** I'm here to listen. To help me understand you better, please share your MBTI personality type, it helps me know more about you.
     If you don't know your type, you can take a free test at [16Personalities](https://www.16personalities.com/free-personality-test).
     """)
+    # <<< ADD THIS CODE HERE
+    with st.expander("What is MBTI? Click to learn more..."):
+        st.markdown("""
+        The MBTI was built on the theories of the Swiss psychiatrist Carl Jung, but he didn't create the personality test himself. The actual creators were an American mother-daughter team, Katharine Cook Briggs and Isabel Myers. It looks at four key areas:
 
+        * **Where you get your energy:** From the inner world (Introversion - I) or the outer world (Extraversion - E).
+        * **How you process information:** Focusing on facts and details (Sensing - S) or patterns and possibilities (Intuition - N).
+        * **How you make decisions:** Based on logic and reason (Thinking - T) or values and people (Feeling - F).
+        * **How you prefer to live:** In a planned, organized way (Judging - J) or a more spontaneous, flexible way (Perceiving - P).
+
+        Your four preferences combine to make up your unique personality type!
+        """)
+    # --- END OF NEW CODE ---
     mbti_type = st.selectbox("Select your MBTI Personality Type:", options=list(MBTI_DESCRIPTIONS.keys()))
     
     st.markdown("---")
@@ -248,4 +260,5 @@ else:
 
     # 3. Text Input (st.chat_input should be the last interactive widget)
     if text_prompt := st.chat_input("Or type your message here..."):
+
         handle_prompt(text_prompt)
