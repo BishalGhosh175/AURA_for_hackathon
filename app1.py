@@ -8,7 +8,7 @@ from io import BytesIO
 
 # --- Configuration ---
 try:
-    GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
+    GEMINI_API_KEY = "AIzaSyAgavEmoD7FLNJHTuxef2wCdx9sAl8t_lw"
     genai.configure(api_key=GEMINI_API_KEY)
 except (FileNotFoundError, KeyError):
     st.sidebar.warning("GEMINI_API_KEY not found in st.secrets. Please enter it below.")
@@ -262,3 +262,4 @@ else:
     if text_prompt := st.chat_input("Or type your message here..."):
 
         handle_prompt(text_prompt)
+
